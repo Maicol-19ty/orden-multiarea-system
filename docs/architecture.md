@@ -5,7 +5,7 @@ MVP "Enrutador de Órdenes Multiárea con Temporizador" (Multi-Area Order Router
 
 ## Technology Stack
 - **Backend Framework**: Spring Boot 3.2.0
-- **Language**: Java 17 + Kotlin
+- **Language**: Java 17
 - **Build Tool**: Gradle (Kotlin DSL)
 - **Database**: PostgreSQL
 - **Database Migrations**: Flyway

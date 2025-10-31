@@ -1,8 +1,8 @@
 -- Initial schema for Order Router System
--- This is a placeholder migration that creates the basic structure
+-- This migration creates the basic structure for the multi-area order routing system
 
 -- Create areas table
-CREATE TABLE IF NOT EXISTS areas (
+CREATE TABLE areas (
     id SERIAL PRIMARY KEY,
     name VARCHAR(100) NOT NULL UNIQUE,
     description TEXT,
@@ -12,7 +12,7 @@ CREATE TABLE IF NOT EXISTS areas (
 );
 
 -- Create orders table
-CREATE TABLE IF NOT EXISTS orders (
+CREATE TABLE orders (
     id SERIAL PRIMARY KEY,
     order_number VARCHAR(50) NOT NULL UNIQUE,
     area_id INTEGER REFERENCES areas(id),
@@ -24,7 +24,7 @@ CREATE TABLE IF NOT EXISTS orders (
 );
 
 -- Create order_timers table for timer functionality
-CREATE TABLE IF NOT EXISTS order_timers (
+CREATE TABLE order_timers (
     id SERIAL PRIMARY KEY,
     order_id INTEGER REFERENCES orders(id) ON DELETE CASCADE,
     started_at TIMESTAMP NOT NULL,
